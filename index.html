@@ -22,16 +22,16 @@ w\:* {behavior:url(#default#VML);}
  <o:DocumentProperties>
   <o:Author>pcolmer</o:Author>
   <o:LastAuthor>Colmer, Paul</o:LastAuthor>
-  <o:Revision>2</o:Revision>
-  <o:TotalTime>1</o:TotalTime>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>2</o:TotalTime>
   <o:Created>2016-01-29T01:24:00Z</o:Created>
-  <o:LastSaved>2016-01-29T01:24:00Z</o:LastSaved>
+  <o:LastSaved>2016-01-29T01:27:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
-  <o:Words>1904</o:Words>
-  <o:Characters>10856</o:Characters>
-  <o:Lines>90</o:Lines>
+  <o:Words>1918</o:Words>
+  <o:Characters>10934</o:Characters>
+  <o:Lines>91</o:Lines>
   <o:Paragraphs>25</o:Paragraphs>
-  <o:CharactersWithSpaces>12735</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>12827</o:CharactersWithSpaces>
   <o:Version>15.00</o:Version>
  </o:DocumentProperties>
 </xml><![endif]-->
@@ -39,6 +39,8 @@ w\:* {behavior:url(#default#VML);}
 <link rel=colorSchemeMapping href="index_files/colorschememapping.xml">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
   <w:TrackMoves>false</w:TrackMoves>
   <w:TrackFormatting/>
   <w:ValidateAgainstSchemas/>
@@ -726,6 +728,12 @@ span.gem3dmtclgb
 span.gem3dmtclfb
 	{mso-style-name:gem3dmtclfb;
 	mso-style-unhide:no;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
 .MsoChpDefault
 	{mso-style-type:export-only;
 	mso-default-props:yes;
@@ -778,10 +786,13 @@ div.WordSection1
 Learning Assignment – John Hopkins University</span></p>
 
 <p class=MsoNormal>The code that supports this assignment is in the same repo
-called Prediction.R.</p>
+called <span class=SpellE>Prediction.R</span>.<span style='mso-spacerun:yes'> 
+</span>Here is the link to the repo:</p>
+
+<p class=MsoNormal>https://github.com/pcolmer99/Machine-Learning-Assignment.git</p>
 
 <p class=MsoNormal>The aim of the code is to predict the outcome of the
-variable classe.</p>
+variable <span class=SpellE>classe</span>.</p>
 
 <p class=MsoNormal>I spend some time reading the assignment, the actual
 research paper and then performed some very simple analysis, i.e. feature
@@ -796,35 +807,33 @@ libraries:</p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; library(caret)</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=GramE>library(</span>caret)</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; library(ggplot2)</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=GramE>library(</span>ggplot2)</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt;
-install.packages(&quot;caret&quot;)</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE><span
+class=GramE>install.packages</span></span><span class=GramE>(</span>&quot;caret&quot;)</span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
 <p class=MsoNormal>Then load in the training and testing sets, and ensure all
 div by zero, NA and null values are converted to NA values in the data.&nbsp;
-This is the start of the data cleanup process and means we only have to deal
-with the NAs in our next step.</p>
+This is the start of the data <span class=SpellE>cleanup</span> process and
+means we only have to deal with the NAs in our next step.</p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; training &lt;-
-read.csv('pml-training.csv',
-na.strings=c(&quot;NA&quot;,&quot;#DIV/0!&quot;,&quot;&quot;))</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=GramE>training</span>
+&lt;- read.csv('pml-training.csv', <span class=SpellE>na.strings</span>=c(&quot;NA&quot;,&quot;#DIV/0!&quot;,&quot;&quot;))</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; testing &lt;-
-read.csv('pml-testing.csv',
-na.strings=c(&quot;NA&quot;,&quot;#DIV/0!&quot;,&quot;&quot;))</span></p>
+font-family:"Lucida Console";color:blue'>&gt; testing &lt;- <span class=GramE>read.csv(</span>'pml-testing.csv',
+<span class=SpellE>na.strings</span>=c(&quot;NA&quot;,&quot;#DIV/0!&quot;,&quot;&quot;))</span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -833,209 +842,262 @@ This screenshot is truncated for brevity.</p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; str(training)</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE><span
+class=GramE>str</span></span><span class=GramE>(</span>training)</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>'data.frame':&nbsp; 19622 obs.
-of&nbsp; 160 variables:</span></p>
+font-family:"Lucida Console";color:black'>'<span class=SpellE>data.frame</span>':&nbsp;
+19622 obs. of<span class=GramE>&nbsp; 160</span> variables:</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
 font-family:"Lucida Console";color:black'>&nbsp;$
 X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: int&nbsp; 1 2 3 4 5 6 7 8 9 10 ...</span></p>
+: <span class=SpellE>int</span><span class=GramE>&nbsp; 1</span> 2 3 4 5 6 7 8
+9 10 ...</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>user_name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: Factor w/ 6 levels &quot;<span class=SpellE>adelmo</span>&quot;,&quot;<span
+class=SpellE>carlitos</span><span class=GramE>&quot;,..:</span> 2 2 2 2 2 2 2 2
+2 2 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
 font-family:"Lucida Console";color:black'>&nbsp;$
-user_name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: Factor w/ 6 levels &quot;adelmo&quot;,&quot;carlitos&quot;,..: 2 2 2 2 2 2 2
-2 2 2 ...</span></p>
+raw_timestamp_part_1&nbsp;&nbsp;&nbsp; : <span class=SpellE>int</span><span
+class=GramE>&nbsp; 1323084231</span> 1323084231 1323084231 1323084232
+1323084232 1323084232 1323084232 1323084232 1323084232 1323084232 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
 font-family:"Lucida Console";color:black'>&nbsp;$
-raw_timestamp_part_1&nbsp;&nbsp;&nbsp; : int&nbsp; 1323084231 1323084231
-1323084231 1323084232 1323084232 1323084232 1323084232 1323084232 1323084232
-1323084232 ...</span></p>
+raw_timestamp_part_2&nbsp;&nbsp;&nbsp; : <span class=SpellE>int</span><span
+class=GramE>&nbsp; 788290</span> 808298 820366 120339 196328 304277 368296
+440390 484323 484434 ...</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>cvtd_timestamp</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: Factor w/ 20 levels &quot;02/12/2011 13:32<span class=GramE>&quot;,..:</span>
+9 9 9 9 9 9 9 9 9 9 ...</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>new_window</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: Factor w/ 2 levels &quot;<span class=SpellE>no&quot;,&quot;yes</span>&quot;:
+1 1 1 1 1 1 1 1 1 <span class=GramE>1 ...</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>num_window</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; 11</span> 11 11 12 12
+12 12 12 12 12 ...</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>roll_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; 1.41</span> 1.41 1.42
+1.48 1.48 1.45 1.42 1.42 1.43 1.45 ...</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>pitch_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; 8.07</span> 8.07 8.07
+8.05 8.07 8.06 8.09 8.13 8.16 8.17 ...</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>yaw_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; -</span>94.4 -94.4
+-94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 ...</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>total_accel_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; 3</span> 3 3 3 3 3 3 3
+3 3 ...</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>kurtosis_roll_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>kurtosis_picth_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>kurtosis_yaw_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>logi</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> ...</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
+white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>skewness_roll_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
 font-family:"Lucida Console";color:black'>&nbsp;$
-raw_timestamp_part_2&nbsp;&nbsp;&nbsp; : int&nbsp; 788290 808298 820366 120339
-196328 304277 368296 440390 484323 484434 ...</span></p>
+skewness_roll_belt.1&nbsp;&nbsp;&nbsp; : <span class=SpellE>num</span><span
+class=GramE>&nbsp; NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-cvtd_timestamp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Factor
-w/ 20 levels &quot;02/12/2011 13:32&quot;,..: 9 9 9 9 9 9 9 9 9 9 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>skewness_yaw_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>logi</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-new_window&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: Factor w/ 2 levels &quot;no&quot;,&quot;yes&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>max_roll_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-num_window&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: int&nbsp; 11 11 11 12 12 12 12 12 12 12 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>max_picth_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-roll_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: num&nbsp; 1.41 1.41 1.42 1.48 1.48 1.45 1.42 1.42 1.43 1.45 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>max_yaw_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$ pitch_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: num&nbsp; 8.07 8.07 8.07 8.05 8.07 8.06 8.09 8.13 8.16 8.17 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>min_roll_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-yaw_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: num&nbsp; -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>min_pitch_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-total_accel_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : int&nbsp; 3 3 3 3
-3 3 3 3 3 3 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>min_yaw_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-kurtosis_roll_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : num&nbsp; NA NA NA NA NA NA
-NA NA NA NA ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>amplitude_roll_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-kurtosis_picth_belt&nbsp;&nbsp;&nbsp;&nbsp; : num&nbsp; NA NA NA NA NA NA NA NA
-NA NA ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>amplitude_pitch_belt</span>&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-kurtosis_yaw_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : logi&nbsp; NA NA NA NA
-NA NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-skewness_roll_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : num&nbsp; NA NA NA NA NA NA
-NA NA NA NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-skewness_roll_belt.1&nbsp;&nbsp;&nbsp; : num&nbsp; NA NA NA NA NA NA NA NA NA
-NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-skewness_yaw_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : logi&nbsp; NA NA NA NA
-NA NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-max_roll_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-num&nbsp; NA NA NA NA NA NA NA NA NA NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-max_picth_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-int&nbsp; NA NA NA NA NA NA NA NA NA NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-max_yaw_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: num&nbsp; NA NA NA NA NA NA NA NA NA NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-min_roll_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-num&nbsp; NA NA NA NA NA NA NA NA NA NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-min_pitch_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-int&nbsp; NA NA NA NA NA NA NA NA NA NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-min_yaw_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: num&nbsp; NA NA NA NA NA NA NA NA NA NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-amplitude_roll_belt&nbsp;&nbsp;&nbsp;&nbsp; : num&nbsp; NA NA NA NA NA NA NA NA
-NA NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-amplitude_pitch_belt&nbsp;&nbsp;&nbsp; : int&nbsp; NA NA NA NA NA NA NA NA NA
-NA ...</span></p>
-
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-amplitude_yaw_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : num&nbsp; NA NA NA NA NA NA
-NA NA NA NA ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>amplitude_yaw_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; NA</span> <span
+class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+<span class=SpellE>NA</span> <span class=SpellE>NA</span> <span class=SpellE>NA</span>
+...</span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<p class=MsoNormal>Now it’s cleanup time.&nbsp; The following code loops around
-each column and determines whether there are more than 20% NAs in the
-data.&nbsp; If there are, the column is removed from the training set.&nbsp;
-Columns with too many NAs are useless as predictors.&nbsp; Imputing does not
-help, as you need sufficient data to make a predictor useful.&nbsp; I figured
-20% was a good rule of thumb.</p>
+<p class=MsoNormal>Now it’s <span class=SpellE>cleanup</span> time.&nbsp; The
+following code loops around each column and determines whether there are more
+than 20% NAs in the data.&nbsp; If there are, the column is removed from the
+training set.&nbsp; Columns with too many NAs are useless as predictors.&nbsp;
+Imputing does not help, as you need sufficient data to make a predictor
+useful.&nbsp; I figured 20% was a good rule of thumb.</p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; totcol &lt;- ncol(training)</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE><span
+class=GramE>totcol</span></span> &lt;- <span class=SpellE>ncol</span>(training)</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; totrow &lt;-nrow(training)</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE><span
+class=GramE>totrow</span></span> &lt;-<span class=SpellE>nrow</span>(training)</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; remove_na &lt;- c(0)</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE>remove_na</span>
+&lt;- <span class=GramE>c(</span>0)</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; for(i in 1:totcol) {</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=GramE>for(</span><span
+class=SpellE>i</span> in 1:totcol) {</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>+&nbsp;&nbsp;&nbsp;&nbsp; testna &lt;-
-training[ ,i]</span></p>
+font-family:"Lucida Console";color:blue'>+&nbsp;&nbsp;&nbsp;&nbsp; <span
+class=SpellE><span class=GramE>testna</span></span> &lt;- training[ ,<span
+class=SpellE>i</span>]</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>+&nbsp;&nbsp;&nbsp;&nbsp; if
-(length(testna)*0.80 &lt;= length(testna[is.na(testna)])) {</span></p>
+font-family:"Lucida Console";color:blue'>+&nbsp;&nbsp;&nbsp;&nbsp; <span
+class=GramE>if</span> (length(<span class=SpellE>testna</span>)*0.80 &lt;=
+length(<span class=SpellE>testna</span>[is.na(<span class=SpellE>testna</span>)]))
+{</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
 font-family:"Lucida Console";color:blue'>+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-remove_na[length(remove_na)+1] &lt;- i</span></p>
+<span class=SpellE>remove_<span class=GramE>na</span></span><span class=GramE>[</span>length(<span
+class=SpellE>remove_na</span>)+1] &lt;- <span class=SpellE>i</span></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
@@ -1047,8 +1109,8 @@ font-family:"Lucida Console";color:blue'>+ }</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; training &lt;- training[
-,-remove_na]</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=GramE>training</span>
+&lt;- training[ ,-<span class=SpellE>remove_na</span>]</span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -1057,167 +1119,172 @@ truncated for brevity.</p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; str(training)</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE><span
+class=GramE>str</span></span><span class=GramE>(</span>training)</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>'data.frame':&nbsp; 19622 obs.
-of&nbsp; 60 variables:</span></p>
+font-family:"Lucida Console";color:black'>'<span class=SpellE>data.frame</span>':&nbsp;
+19622 obs. of<span class=GramE>&nbsp; 60</span> variables:</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
 font-family:"Lucida Console";color:black'>&nbsp;$
 X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-int&nbsp; 1 2 3 4 5 6 7 8 9 10 ...</span></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span
+class=SpellE>int</span><span class=GramE>&nbsp; 1</span> 2 3 4 5 6 7 8 9 10 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-user_name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Factor
-w/ 6 levels &quot;adelmo&quot;,&quot;carlitos&quot;,..: 2 2 2 2 2 2 2 2 2 2 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>user_name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: Factor w/ 6 levels &quot;<span class=SpellE>adelmo</span>&quot;,&quot;<span
+class=SpellE>carlitos</span><span class=GramE>&quot;,..:</span> 2 2 2 2 2 2 2 2
+2 2 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$ raw_timestamp_part_1:
-int&nbsp; 1323084231 1323084231 1323084231 1323084232 1323084232 1323084232
-1323084232 1323084232 1323084232 1323084232 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ raw_timestamp_part_1: <span
+class=SpellE>int</span><span class=GramE>&nbsp; 1323084231</span> 1323084231
+1323084231 1323084232 1323084232 1323084232 1323084232 1323084232 1323084232
+1323084232 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$ raw_timestamp_part_2:
-int&nbsp; 788290 808298 820366 120339 196328 304277 368296 440390 484323 484434
-...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ raw_timestamp_part_2: <span
+class=SpellE>int</span><span class=GramE>&nbsp; 788290</span> 808298 820366
+120339 196328 304277 368296 440390 484323 484434 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-cvtd_timestamp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Factor w/ 20 levels
-&quot;02/12/2011 13:32&quot;,..: 9 9 9 9 9 9 9 9 9 9 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>cvtd_timestamp</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: Factor w/ 20 levels &quot;02/12/2011 13:32<span class=GramE>&quot;,..:</span>
+9 9 9 9 9 9 9 9 9 9 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-new_window&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Factor w/ 2
-levels &quot;no&quot;,&quot;yes&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>new_window</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: Factor w/ 2 levels &quot;<span class=SpellE>no&quot;,&quot;yes</span>&quot;:
+1 1 1 1 1 1 1 1 1 <span class=GramE>1 ...</span></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-num_window&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : int&nbsp; 11
-11 11 12 12 12 12 12 12 12 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>num_window</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; 11</span> 11 11 12 12
+12 12 12 12 12 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-roll_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-num&nbsp; 1.41 1.41 1.42 1.48 1.48 1.45 1.42 1.42 1.43 1.45 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>roll_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; 1.41</span> 1.41 1.42
+1.48 1.48 1.45 1.42 1.42 1.43 1.45 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$ pitch_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: num&nbsp; 8.07 8.07 8.07 8.05 8.07 8.06 8.09 8.13 8.16 8.17 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>pitch_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; 8.07</span> 8.07 8.07
+8.05 8.07 8.06 8.09 8.13 8.16 8.17 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-yaw_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-num&nbsp; -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>yaw_belt</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; -</span>94.4 -94.4
+-94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 -94.4 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-total_accel_belt&nbsp;&nbsp;&nbsp; : int&nbsp; 3 3 3 3 3 3 3 3 3 3 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>total_accel_belt</span>&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; 3</span> 3 3 3 3 3 3 3
+3 3 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-gyros_belt_x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : num&nbsp; 0 0.02 0
-0.02 0.02 0.02 0.02 0.02 0.02 0.03 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>gyros_belt_x</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; 0</span> 0.02 0 0.02
+0.02 0.02 0.02 0.02 0.02 0.03 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-gyros_belt_y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : num&nbsp; 0 0 0 0 0.02
-0 0 0 0 0 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>gyros_belt_y</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; 0</span> 0 0 0 0.02 0 0
+0 0 0 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-gyros_belt_z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : num&nbsp; -0.02 -0.02
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>gyros_belt_z</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; -</span>0.02 -0.02
 -0.02 -0.03 -0.02 -0.02 -0.02 -0.02 -0.02 0 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-accel_belt_x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : int&nbsp; -21 -22 -20
--22 -21 -21 -22 -22 -20 -21 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>accel_belt_x</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; -</span>21 -22 -20 -22
+-21 -21 -22 -22 -20 -21 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-accel_belt_y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : int&nbsp; 4 4 5 3 2 4
-3 4 2 4 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>accel_belt_y</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; 4</span> 4 5 3 2 4 3 4
+2 4 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-accel_belt_z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : int&nbsp; 22 22 23 21
-24 21 21 21 24 22 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>accel_belt_z</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; 22</span> 22 23 21 24
+21 21 21 24 22 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-magnet_belt_x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : int&nbsp; -3 -7 -2 -6 -6 0
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>magnet_belt_x</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; -</span>3 -7 -2 -6 -6 0
 -4 -2 1 -3 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-magnet_belt_y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : int&nbsp; 599 608 600 604
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>magnet_belt_y</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; 599</span> 608 600 604
 600 603 599 603 602 609 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-magnet_belt_z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : int&nbsp; -313 -311 -305
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>magnet_belt_z</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; -</span>313 -311 -305
 -310 -302 -312 -311 -313 -312 -308 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-roll_arm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-num&nbsp; -128 -128 -128 -128 -128 -128 -128 -128 -128 -128 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>roll_arm</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; -</span>128 -128 -128
+-128 -128 -128 -128 -128 -128 -128 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-pitch_arm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-num&nbsp; 22.5 22.5 22.5 22.1 22.1 22 21.9 21.8 21.7 21.6 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>pitch_arm</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; 22.5</span> 22.5 22.5
+22.1 22.1 22 21.9 21.8 21.7 21.6 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-yaw_arm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: num&nbsp; -161 -161 -161 -161 -161 -161 -161 -161 -161 -161 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>yaw_arm</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; -</span>161 -161 -161
+-161 -161 -161 -161 -161 -161 -161 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-total_accel_arm&nbsp;&nbsp;&nbsp;&nbsp; : int&nbsp; 34 34 34 34 34 34 34 34 34
-34 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>total_accel_arm</span>&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; 34</span> 34 34 34 34
+34 34 34 34 34 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-gyros_arm_x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : num&nbsp; 0 0.02
-0.02 0.02 0 0.02 0 0.02 0.02 0.02 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>gyros_arm_x</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; 0</span> 0.02 0.02 0.02
+0 0.02 0 0.02 0.02 0.02 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-gyros_arm_y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : num&nbsp; 0 -0.02
--0.02 -0.03 -0.03 -0.03 -0.03 -0.02 -0.03 -0.03 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>gyros_arm_y</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>num</span><span class=GramE>&nbsp; 0</span> -0.02 -0.02
+-0.03 -0.03 -0.03 -0.03 -0.02 -0.03 -0.03 ...</span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -1225,8 +1292,8 @@ gyros_arm_y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : num&nbsp; 0 -0.02
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; testing &lt;- testing[
-,-remove_na]</span></p>
+font-family:"Lucida Console";color:blue'>&gt; testing &lt;- <span class=GramE>testing[</span>
+,-<span class=SpellE>remove_na</span>]</span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -1258,182 +1325,232 @@ of these came to the top.&nbsp; This means we can discard them.</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'>&nbsp;</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:blue'>colnames(training)</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:blue'>colnames</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:blue'>(training)</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>&nbsp;[1]
-  &quot;roll_belt&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;pitch_belt&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;yaw_belt&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;total_accel_belt&quot;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;gyros_belt_x&quot;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+  font-family:"Lucida Console";color:black'>&nbsp;[1] &quot;<span class=SpellE>roll_belt</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>pitch_belt</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>yaw_belt</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>total_accel_belt</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>gyros_belt_x</span>&quot;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>&nbsp;[6]
-  &quot;gyros_belt_y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;gyros_belt_z&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;accel_belt_x&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;accel_belt_y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;accel_belt_z&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+  font-family:"Lucida Console";color:black'>&nbsp;[6] &quot;<span class=SpellE>gyros_belt_y</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>gyros_belt_z</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>accel_belt_x</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>accel_belt_y</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>accel_belt_z</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>[11]
-  &quot;magnet_belt_x&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;magnet_belt_y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;magnet_belt_z&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;roll_arm&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;pitch_arm&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+  font-family:"Lucida Console";color:black'>[11] &quot;<span class=SpellE>magnet_belt_x</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>magnet_belt_y</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>magnet_belt_z</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>roll_arm</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>pitch_arm</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:blue'>&gt; colnames(testing)</span></p>
+  font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE>colnames</span>(testing)</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>&nbsp;[1]
-  &quot;roll_belt&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;pitch_belt&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;yaw_belt&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;total_accel_belt&quot;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;gyros_belt_x&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+  font-family:"Lucida Console";color:black'>&nbsp;[1] &quot;<span class=SpellE>roll_belt</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>pitch_belt</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>yaw_belt</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>total_accel_belt</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>gyros_belt_x</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>&nbsp;[6]
-  &quot;gyros_belt_y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;gyros_belt_z&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;accel_belt_x&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;accel_belt_y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;accel_belt_z&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+  font-family:"Lucida Console";color:black'>&nbsp;[6] &quot;<span class=SpellE>gyros_belt_y</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>gyros_belt_z</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>accel_belt_x</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>accel_belt_y</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>accel_belt_z</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>[11]
-  &quot;magnet_belt_x&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;magnet_belt_y&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;magnet_belt_z&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;roll_arm&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &quot;pitch_arm&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+  font-family:"Lucida Console";color:black'>[11] &quot;<span class=SpellE>magnet_belt_x</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>magnet_belt_y</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>magnet_belt_z</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>roll_arm</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &quot;<span class=SpellE>pitch_arm</span>&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'>I check for near zero values and find that there are none, so there is
-  no value in pre-processing using method=”nzv”.</p>
+  normal'>I check for near zero values and find that there are none, so there
+  is no value in pre-processing using method=”<span class=SpellE>nzv</span>”.</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'>&nbsp;</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:blue'>&gt; nzv &lt;- nearZeroVar(training,
-  saveMetrics=TRUE)</span></p>
+  font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE>nzv</span>
+  &lt;- <span class=SpellE>nearZeroVar</span>(training, <span class=SpellE>saveMetrics</span>=TRUE)</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:blue'>&gt; print(nzv) </span></p>
+  font-family:"Lucida Console";color:blue'>&gt; print(<span class=SpellE>nzv</span>)
+  </span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
   font-family:"Lucida Console";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  freqRatio percentUnique zeroVar&nbsp;&nbsp; nzv</span></p>
+  <span class=SpellE>freqRatio</span> <span class=SpellE>percentUnique</span> <span
+  class=SpellE>zeroVar</span>&nbsp;&nbsp; <span class=SpellE>nzv</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>roll_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.101904&nbsp;&nbsp;&nbsp;&nbsp; 6.7781062&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>roll_belt</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1.101904&nbsp;&nbsp;&nbsp;&nbsp; 6.7781062&nbsp;&nbsp; FALSE <span
+  class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>pitch_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.036082&nbsp;&nbsp;&nbsp;&nbsp; 9.3772296&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>pitch_belt</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1.036082&nbsp;&nbsp;&nbsp;&nbsp; 9.3772296&nbsp;&nbsp; FALSE <span
+  class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>yaw_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.058480&nbsp;&nbsp;&nbsp;&nbsp; 9.9734991&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>yaw_belt</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1.058480&nbsp;&nbsp;&nbsp;&nbsp; 9.9734991&nbsp;&nbsp; FALSE <span
+  class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>total_accel_belt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.063160&nbsp;&nbsp;&nbsp;&nbsp; 0.1477933&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>total_accel_belt</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.063160&nbsp;&nbsp;&nbsp;&nbsp;
+  0.1477933&nbsp;&nbsp; FALSE <span class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>gyros_belt_x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.058651&nbsp;&nbsp;&nbsp;&nbsp; 0.7134849&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>gyros_belt_x</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1.058651&nbsp;&nbsp;&nbsp;&nbsp; 0.7134849&nbsp;&nbsp; FALSE <span
+  class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>gyros_belt_y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.144000&nbsp;&nbsp;&nbsp;&nbsp; 0.3516461&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>gyros_belt_y</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1.144000&nbsp;&nbsp;&nbsp;&nbsp; 0.3516461&nbsp;&nbsp; FALSE <span
+  class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>gyros_belt_z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.066214&nbsp;&nbsp;&nbsp;&nbsp; 0.8612782&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>gyros_belt_z</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1.066214&nbsp;&nbsp;&nbsp;&nbsp; 0.8612782&nbsp;&nbsp; FALSE <span
+  class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>accel_belt_x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.055412&nbsp;&nbsp;&nbsp;&nbsp; 0.8357966&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>accel_belt_x</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1.055412&nbsp;&nbsp;&nbsp;&nbsp; 0.8357966&nbsp;&nbsp; FALSE <span
+  class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>accel_belt_y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.113725&nbsp;&nbsp;&nbsp;&nbsp; 0.7287738&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>accel_belt_y</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1.113725&nbsp;&nbsp;&nbsp;&nbsp; 0.7287738&nbsp;&nbsp; FALSE <span
+  class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>accel_belt_z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.078767&nbsp;&nbsp;&nbsp;&nbsp; 1.5237998&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>accel_belt_z</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1.078767&nbsp;&nbsp;&nbsp;&nbsp; 1.5237998&nbsp;&nbsp; FALSE <span
+  class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>magnet_belt_x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.090141&nbsp;&nbsp;&nbsp;&nbsp; 1.6664968&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>magnet_belt_x</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1.090141&nbsp;&nbsp;&nbsp;&nbsp; 1.6664968&nbsp;&nbsp; FALSE <span
+  class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>magnet_belt_y&nbsp;&nbsp;&nbsp;
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>magnet_belt_y</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.099688&nbsp;&nbsp;&nbsp;&nbsp;
-  1.5187035&nbsp;&nbsp; FALSE FALSE</span></p>
+  1.5187035&nbsp;&nbsp; FALSE <span class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>magnet_belt_z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  1.006369&nbsp;&nbsp;&nbsp;&nbsp; 2.3290184&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>magnet_belt_z</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  1.006369&nbsp;&nbsp;&nbsp;&nbsp; 2.3290184&nbsp;&nbsp; FALSE <span
+  class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
-  white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:black'>roll_arm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  52.338462&nbsp;&nbsp;&nbsp; 13.5256345&nbsp;&nbsp; FALSE FALSE</span></p>
+  white;word-break:break-all'><span class=SpellE><span style='font-size:10.0pt;
+  line-height:105%;font-family:"Lucida Console";color:black'>roll_arm</span></span><span
+  style='font-size:10.0pt;line-height:105%;font-family:"Lucida Console";
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  52.338462&nbsp;&nbsp;&nbsp; 13.5256345&nbsp;&nbsp; FALSE <span class=SpellE>FALSE</span></span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'>&nbsp;</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'>I’m now ready to slice up my data.&nbsp; I use only the training set
-  and partition into xtraining and vtest variables.&nbsp; Xtraining will be
-  used to train my model, with vtest used for cross-validation.&nbsp; I’m using
-  a 60/40 split as recommended by Professor Leek.&nbsp; My plan is to reserver the
-  testing set, once I’ve done my cross-validation.&nbsp; <span
-  style='font-family:Wingdings'>J</span></p>
+  and partition into <span class=SpellE>xtraining</span> and <span
+  class=SpellE>vtest</span> variables.&nbsp; <span class=SpellE>Xtraining</span>
+  will be used to train my model, with <span class=SpellE>vtest</span> used for
+  cross-validation.&nbsp; I’m using a 60/40 split as recommended by Professor
+  Leek.&nbsp; My plan is to <span class=SpellE>reserver</span> the testing set,
+  once I’ve done my cross-validation.&nbsp; <span style='font-family:Wingdings'>J</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'>&nbsp;</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:blue'>&gt; inTrain &lt;-
-  createDataPartition(y=training$classe, p=0.6, list=FALSE)</span></p>
+  font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE>inTrain</span>
+  &lt;- <span class=SpellE>createDataPartition</span>(y=<span class=SpellE>training$classe</span>,
+  p=0.6, list=FALSE)</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:blue'>&gt; xtraining &lt;-
-  training[inTrain,]</span></p>
+  font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE>xtraining</span>
+  &lt;- training[<span class=SpellE>inTrain</span>,]</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
   white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-  font-family:"Lucida Console";color:blue'>&gt; vtest &lt;- training[-inTrain,]</span></p>
+  font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE>vtest</span>
+  &lt;- training[-<span class=SpellE>inTrain</span>,]</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'>&nbsp;</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'>Let’s go and train some models.&nbsp; I’m going to train 3 models to
-  see what the out of sample error is on the cross-validation set.&nbsp; I
-  could check for NA’s (Inputing) and check to see whether any variables are
-  skewed (Standardisation), but I elect to experiment with the train settings
-  first and observe the results.&nbsp; I can also circle back if I’m not happy
-  with my training and cross-validation results.</p>
+  normal'>Let’s go and train some models.&nbsp; I’m going to train 3 models to see
+  what the out of sample error is on the cross-validation set.&nbsp; I could
+  check for NA’s (<span class=SpellE>Inputing</span>) and check to see whether
+  any variables are skewed (Standardisation), but I elect to experiment with
+  the train settings first and observe the results.&nbsp; I can also circle
+  back if I’m not happy with my training and cross-validation results.</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'>&nbsp;</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'><span style='font-size:10.0pt;font-family:"Lucida Console";
-  color:blue'>&gt; modfit &lt;- train(classe ~., method=&quot;rf&quot;,
-  data=xtraining)</span></p>
+  color:blue'>&gt; <span class=SpellE>modfit</span> &lt;- train(<span
+  class=SpellE>classe</span> ~., method=&quot;<span class=SpellE>rf</span>&quot;,
+  data=<span class=SpellE>xtraining</span>)</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'><span style='font-size:10.0pt;font-family:"Lucida Console";
-  color:blue'>&gt; modfit2 &lt;- train(classe ~., method=&quot;rf&quot;,
-  preProcess=c(&quot;center&quot;, &quot;scale&quot;, &quot;knnImpute&quot;),
-  data=xtraining)</span></p>
+  color:blue'>&gt; modfit2 &lt;- train(<span class=SpellE>classe</span> ~.,
+  method=&quot;<span class=SpellE>rf</span>&quot;, <span class=SpellE>preProcess</span>=c(&quot;<span
+  class=SpellE>center</span>&quot;, &quot;scale&quot;, &quot;<span
+  class=SpellE>knnImpute</span>&quot;), data=<span class=SpellE>xtraining</span>)</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'><span style='font-size:10.0pt;font-family:"Lucida Console";
-  color:blue'>&gt; modfit3 &lt;- train(classe ~., method=&quot;rf&quot;,
-  trControl=trainControl(method = &quot;cv&quot;, number = 3), data=xtraining)</span></p>
+  color:blue'>&gt; modfit3 &lt;- train(<span class=SpellE>classe</span> ~.,
+  method=&quot;<span class=SpellE>rf</span>&quot;, <span class=SpellE>trControl</span>=<span
+  class=SpellE>trainControl</span>(method = &quot;cv&quot;, number = 3), data=<span
+  class=SpellE>xtraining</span>)</span></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
@@ -1452,8 +1569,8 @@ of these came to the top.&nbsp; This means we can discard them.</p>
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>I decide to use all the remaining predictors (52),
-    except the classe variable to train the model.&nbsp; It takes around 60
-    minutes to complete.</p>
+    except the <span class=SpellE>classe</span> variable to train the
+    model.&nbsp; It takes around 60 minutes to complete.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
@@ -1464,11 +1581,12 @@ of these came to the top.&nbsp; This means we can discard them.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
     line-height:105%;font-family:"Lucida Console";color:blue'>&gt; pred1 &lt;-
-    predict(modfit, newdata=vtest)</span></p>
+    predict(<span class=SpellE>modfit</span>, <span class=SpellE>newdata</span>=<span
+    class=SpellE>vtest</span>)</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
-    line-height:105%;font-family:"Lucida Console";color:blue'>&gt;
-    confusionMatrix(pred1, vtest$classe)$overall[1]</span></p>
+    line-height:105%;font-family:"Lucida Console";color:blue'>&gt; <span
+    class=SpellE>confusionMatrix</span>(pred1, <span class=SpellE>vtest$classe</span>)$overall[1]</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
     line-height:105%;font-family:"Lucida Console";color:black'>&nbsp;Accuracy </span></p>
@@ -1479,20 +1597,22 @@ of these came to the top.&nbsp; This means we can discard them.</p>
     line-height:normal'><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>Next is modfit2, which is using 2 pre-processing
-    techniques: standardising (to normalise skewed variables) and inputing (to
-    remove NAs and resample).&nbsp; I’m pretty confident that this won’t help,
-    given my analysis , but I wanted to see what would happen in the accuracy.&nbsp;
-    This also takes around 60 minutes to run.</p>
+    techniques: standardising (to normalise skewed variables) and <span
+    class=SpellE>inputing</span> (to remove NAs and resample).&nbsp; I’m pretty
+    confident that this won’t help, given my <span class=GramE>analysis ,</span>
+    but I wanted to see what would happen in the accuracy.&nbsp; This also
+    takes around 60 minutes to run.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
     line-height:105%;font-family:"Lucida Console";color:blue'>&gt; pred2 &lt;-
-    predict(modfit2, newdata=vtest)</span></p>
+    predict(modfit2, <span class=SpellE>newdata</span>=<span class=SpellE>vtest</span>)</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
-    line-height:105%;font-family:"Lucida Console";color:blue'>&gt;
-    confusionMatrix(pred2, vtest$classe)$overall[1] </span></p>
+    line-height:105%;font-family:"Lucida Console";color:blue'>&gt; <span
+    class=SpellE>confusionMatrix</span>(pred2, <span class=SpellE>vtest$classe</span>)$overall[1]
+    </span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
     line-height:105%;font-family:"Lucida Console";color:black'>&nbsp;Accuracy </span></p>
@@ -1502,19 +1622,20 @@ of these came to the top.&nbsp; This means we can discard them.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
-    line-height:normal'>Less accuracy as expected, but not by much, so I can disregard
-    this model.&nbsp; Next is modfit3.&nbsp; This time I’m using K-Fold Cross
-    Validation.</p>
+    line-height:normal'>Less accuracy as expected, but not by much, so I can
+    disregard this model.&nbsp; Next is modfit3.&nbsp; This time I’m using
+    K-Fold Cross Validation.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
-    line-height:105%;font-family:"Lucida Console";color:blue'>pred3 &lt;-
-    predict(modfit3, newdata=vtest)</span></p>
+    line-height:105%;font-family:"Lucida Console";color:blue'>pred3 &lt;- predict(modfit3,
+    <span class=SpellE>newdata</span>=<span class=SpellE>vtest</span>)</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
-    line-height:105%;font-family:"Lucida Console";color:blue'>&gt;
-    confusionMatrix(pred3, vtest$classe)$overall[1]&nbsp; </span></p>
+    line-height:105%;font-family:"Lucida Console";color:blue'>&gt; <span
+    class=SpellE>confusionMatrix</span>(pred3, <span class=SpellE>vtest$classe</span>)$overall[1]&nbsp;
+    </span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
     line-height:105%;font-family:"Lucida Console";color:black'>&nbsp;Accuracy </span></p>
@@ -1524,31 +1645,33 @@ of these came to the top.&nbsp; This means we can discard them.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
-    line-height:normal'>Accuracy is higher but it only takes 5 minutes to run.&nbsp;
-    Something big in the processing has changed.&nbsp; </p>
+    line-height:normal'>Accuracy is higher but it only takes 5 minutes to
+    run.&nbsp; Something big in the processing has changed.&nbsp; </p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>BIG LEARNING:&nbsp; When you run the train command
-    without trControl settings, it defaults to bootstrap sampling.&nbsp; By
-    using K-Fold Cross Validation with number=3, you’re reducing the sampling
-    and removing the repeats.&nbsp; With this knowledge, I’ve decided that
-    modfit is a better model.</p>
+    without <span class=SpellE>trControl</span> settings, it defaults to
+    bootstrap sampling.&nbsp; By using K-Fold Cross Validation with number=3,
+    you’re reducing the sampling and removing the repeats.&nbsp; With this
+    knowledge, I’ve decided that <span class=SpellE>modfit</span> is a better
+    model.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
-    line-height:normal'>So I use modfit and calculate the out of sample as
-    follows:</p>
+    line-height:normal'>So I use <span class=SpellE>modfit</span> and calculate
+    the out of sample as follows:</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
     line-height:105%;font-family:"Lucida Console";color:blue'>&gt; pred1 &lt;-
-    predict(modfit, newdata=vtest)</span></p>
+    predict(<span class=SpellE>modfit</span>, <span class=SpellE>newdata</span>=<span
+    class=SpellE>vtest</span>)</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
-    line-height:105%;font-family:"Lucida Console";color:blue'>&gt; 1 -
-    confusionMatrix(pred1, vtest$classe)$overall[1]</span></p>
+    line-height:105%;font-family:"Lucida Console";color:blue'>&gt; 1 - <span
+    class=SpellE>confusionMatrix</span>(pred1, <span class=SpellE>vtest$classe</span>)$overall[1]</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
     line-height:105%;font-family:"Lucida Console";color:black'>&nbsp;&nbsp;
@@ -1563,18 +1686,19 @@ of these came to the top.&nbsp; This means we can discard them.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
-    line-height:normal'>I also decide to show the Top 20 most important
-    variables as a sanity check:</p>
+    line-height:normal'>I also decide to show the Top 20 most important variables
+    as a sanity check:</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
-    line-height:105%;font-family:"Lucida Console";color:blue'>&gt; varimpobj =
-    varImp(modfit)</span></p>
+    line-height:105%;font-family:"Lucida Console";color:blue'>&gt; <span
+    class=SpellE>varimpobj</span> = <span class=SpellE>varImp</span>(<span
+    class=SpellE>modfit</span>)</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
-    line-height:105%;font-family:"Lucida Console";color:blue'>&gt;
-    plot(varimpobj, main = &quot;Top 20 Variables&quot;, top=20)</span></p>
+    line-height:105%;font-family:"Lucida Console";color:blue'>&gt; plot(<span
+    class=SpellE>varimpobj</span>, main = &quot;Top 20 Variables&quot;, top=20)</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
@@ -1592,7 +1716,8 @@ good.&nbsp; Here is the final model:</p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; modfit$finalModel</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=SpellE><span
+class=GramE>modfit$</span>finalModel</span></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
@@ -1604,8 +1729,9 @@ font-family:"Lucida Console";color:black'>Call:</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;randomForest(x = x, y = y, mtry
-= param$mtry) </span></p>
+font-family:"Lucida Console";color:black'>&nbsp;<span class=SpellE><span
+class=GramE>randomForest</span></span><span class=GramE>(</span>x = x, y = y, <span
+class=SpellE>mtry</span> = <span class=SpellE>param$mtry</span>) </span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
@@ -1629,7 +1755,7 @@ font-family:"Lucida Console";color:black'>&nbsp;</span></p>
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
 font-family:"Lucida Console";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-OOB estimate of&nbsp; error rate: 0.78%</span></p>
+OOB estimate of<span class=GramE>&nbsp; error</span> rate: 0.78%</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
@@ -1639,7 +1765,7 @@ font-family:"Lucida Console";color:black'>Confusion matrix:</span></p>
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
 font-family:"Lucida Console";color:black'>&nbsp;&nbsp;&nbsp;&nbsp;
 A&nbsp;&nbsp;&nbsp; B&nbsp;&nbsp;&nbsp; C&nbsp;&nbsp;&nbsp; D&nbsp;&nbsp;&nbsp;
-E class.error</span></p>
+E <span class=SpellE>class.error</span></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
@@ -1673,17 +1799,18 @@ data and enter the answers into the quiz.</p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; finpred1 &lt;- predict(modfit,
-newdata=testing)</span></p>
+font-family:"Lucida Console";color:blue'>&gt; finpred1 &lt;- <span class=GramE>predict(</span><span
+class=SpellE>modfit</span>, <span class=SpellE>newdata</span>=testing)</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:blue'>&gt; print(finpred1)</span></p>
+font-family:"Lucida Console";color:blue'>&gt; <span class=GramE>print(</span>finpred1)</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;[1] B A B A A E D B A A B C B A
-E E A B B B</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;[1] B A B A <span class=SpellE>A</span>
+E D B A <span class=SpellE>A</span> B C B A E <span class=SpellE>E</span> A B <span
+class=SpellE>B</span> <span class=SpellE>B</span></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
