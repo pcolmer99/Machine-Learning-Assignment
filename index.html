@@ -22,16 +22,16 @@ w\:* {behavior:url(#default#VML);}
  <o:DocumentProperties>
   <o:Author>pcolmer</o:Author>
   <o:LastAuthor>Colmer, Paul</o:LastAuthor>
-  <o:Revision>3</o:Revision>
+  <o:Revision>4</o:Revision>
   <o:TotalTime>2</o:TotalTime>
   <o:Created>2016-01-29T01:24:00Z</o:Created>
-  <o:LastSaved>2016-01-29T01:27:00Z</o:LastSaved>
+  <o:LastSaved>2016-01-29T01:30:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
-  <o:Words>1918</o:Words>
-  <o:Characters>10934</o:Characters>
+  <o:Words>1929</o:Words>
+  <o:Characters>11000</o:Characters>
   <o:Lines>91</o:Lines>
   <o:Paragraphs>25</o:Paragraphs>
-  <o:CharactersWithSpaces>12827</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>12904</o:CharactersWithSpaces>
   <o:Version>15.00</o:Version>
  </o:DocumentProperties>
 </xml><![endif]-->
@@ -687,6 +687,19 @@ w\:* {behavior:url(#default#VML);}
 	mso-fareast-font-family:"Times New Roman";
 	mso-fareast-theme-font:minor-fareast;
 	mso-bidi-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	mso-themecolor:hyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#954F72;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
 pre
 	{mso-style-noshow:yes;
 	mso-style-priority:99;
@@ -778,7 +791,7 @@ div.WordSection1
  </o:shapelayout></xml><![endif]-->
 </head>
 
-<body lang=EN-AU style='tab-interval:36.0pt'>
+<body lang=EN-AU link="#0563C1" vlink="#954F72" style='tab-interval:36.0pt'>
 
 <div class=WordSection1>
 
@@ -789,10 +802,11 @@ Learning Assignment – John Hopkins University</span></p>
 called <span class=SpellE>Prediction.R</span>.<span style='mso-spacerun:yes'> 
 </span>Here is the link to the repo:</p>
 
-<p class=MsoNormal>https://github.com/pcolmer99/Machine-Learning-Assignment.git</p>
+<p class=MsoNormal><a
+href="https://github.com/pcolmer99/Machine-Learning-Assignment.git">https://github.com/pcolmer99/Machine-Learning-Assignment.git</a></p>
 
 <p class=MsoNormal>The aim of the code is to predict the outcome of the
-variable <span class=SpellE>classe</span>.</p>
+variable classe.</p>
 
 <p class=MsoNormal>I spend some time reading the assignment, the actual
 research paper and then performed some very simple analysis, i.e. feature
@@ -866,10 +880,10 @@ class=SpellE>carlitos</span><span class=GramE>&quot;,..:</span> 2 2 2 2 2 2 2 2
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
-font-family:"Lucida Console";color:black'>&nbsp;$
-raw_timestamp_part_1&nbsp;&nbsp;&nbsp; : <span class=SpellE>int</span><span
-class=GramE>&nbsp; 1323084231</span> 1323084231 1323084231 1323084232
-1323084232 1323084232 1323084232 1323084232 1323084232 1323084232 ...</span></p>
+font-family:"Lucida Console";color:black'>&nbsp;$ raw_timestamp_part_1&nbsp;&nbsp;&nbsp;
+: <span class=SpellE>int</span><span class=GramE>&nbsp; 1323084231</span>
+1323084231 1323084231 1323084232 1323084232 1323084232 1323084232 1323084232
+1323084232 1323084232 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
@@ -1259,8 +1273,8 @@ font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>roll_arm</s
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
 font-family:"Lucida Console";color:black'>&nbsp;$ <span class=SpellE>pitch_arm</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-: <span class=SpellE>num</span><span class=GramE>&nbsp; 22.5</span> 22.5 22.5
-22.1 22.1 22 21.9 21.8 21.7 21.6 ...</span></p>
+: <span class=SpellE>num</span><span class=GramE>&nbsp; 22.5</span> 22.5 22.5 22.1
+22.1 22 21.9 21.8 21.7 21.6 ...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
 white;word-break:break-all'><span style='font-size:10.0pt;line-height:105%;
@@ -1385,8 +1399,8 @@ of these came to the top.&nbsp; This means we can discard them.</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'>I check for near zero values and find that there are none, so there
-  is no value in pre-processing using method=”<span class=SpellE>nzv</span>”.</p>
+  normal'>I check for near zero values and find that there are none, so there is
+  no value in pre-processing using method=”<span class=SpellE>nzv</span>”.</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'>&nbsp;</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;background:
@@ -1526,12 +1540,12 @@ of these came to the top.&nbsp; This means we can discard them.</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'>&nbsp;</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'>Let’s go and train some models.&nbsp; I’m going to train 3 models to see
-  what the out of sample error is on the cross-validation set.&nbsp; I could
-  check for NA’s (<span class=SpellE>Inputing</span>) and check to see whether
-  any variables are skewed (Standardisation), but I elect to experiment with
-  the train settings first and observe the results.&nbsp; I can also circle
-  back if I’m not happy with my training and cross-validation results.</p>
+  normal'>Let’s go and train some models.&nbsp; I’m going to train 3 models to
+  see what the out of sample error is on the cross-validation set.&nbsp; I
+  could check for NA’s (<span class=SpellE>Inputing</span>) and check to see
+  whether any variables are skewed (Standardisation), but I elect to experiment
+  with the train settings first and observe the results.&nbsp; I can also
+  circle back if I’m not happy with my training and cross-validation results.</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
   normal'>&nbsp;</p>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
@@ -1562,8 +1576,8 @@ of these came to the top.&nbsp; This means we can discard them.</p>
     <td width=1 valign=top style='width:.5pt;padding:0cm 0cm 0cm 0cm'>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>So…I’m using random forest, as I believe it will give
-    me the best prediction for the data we have.&nbsp; I elect not to combine
-    different models at this stage, however I may revisit this decision is the
+    me the best prediction for the data we have.&nbsp; I elect not to combine different
+    models at this stage, however I may revisit this decision is the
     cross-validation accuracy results are poor.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
@@ -1623,14 +1637,14 @@ of these came to the top.&nbsp; This means we can discard them.</p>
     line-height:normal'><span style='font-size:10.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>Less accuracy as expected, but not by much, so I can
-    disregard this model.&nbsp; Next is modfit3.&nbsp; This time I’m using
-    K-Fold Cross Validation.</p>
+    disregard this model.&nbsp; Next is modfit3.&nbsp; This time I’m using K-Fold
+    Cross Validation.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
-    line-height:105%;font-family:"Lucida Console";color:blue'>pred3 &lt;- predict(modfit3,
-    <span class=SpellE>newdata</span>=<span class=SpellE>vtest</span>)</span></p>
+    line-height:105%;font-family:"Lucida Console";color:blue'>pred3 &lt;-
+    predict(modfit3, <span class=SpellE>newdata</span>=<span class=SpellE>vtest</span>)</span></p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     background:white;word-break:break-all'><span style='font-size:10.0pt;
     line-height:105%;font-family:"Lucida Console";color:blue'>&gt; <span
@@ -1686,8 +1700,8 @@ of these came to the top.&nbsp; This means we can discard them.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
-    line-height:normal'>I also decide to show the Top 20 most important variables
-    as a sanity check:</p>
+    line-height:normal'>I also decide to show the Top 20 most important
+    variables as a sanity check:</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
@@ -1702,7 +1716,7 @@ of these came to the top.&nbsp; This means we can discard them.</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
     line-height:normal'>&nbsp;</p>
     <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
-    line-height:normal'><span style='mso-no-proof:yes'><img width=810
+    line-height:normal'><span style='mso-no-proof:yes'><img border=0 width=810
     height=666 id="_x0000_i1025" src="index_files/image001.jpg"></span></p>
     </td>
    </tr>
