@@ -2,7 +2,7 @@
 Machine Learning Assignment with the John Hopkins Uni
 
 Link to the Assignment
-https://github.com/pcolmer99/Machine-Learning-Assignment/blob/master/Machine%20Learning%20Project.htm
+http://pcolmer99.github.io/Machine-Learning-Assignment/index.html
 
 Link to the R Code
 https://github.com/pcolmer99/Machine-Learning-Assignment/blob/master/Prediction.R
